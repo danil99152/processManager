@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Главная страница</title>
+</head>
+
+<fieldset>
+  <a href="/apps">Запущенные приложения</a><br>
+  <a href="/history/all">История запусков</a><br>
+</fieldset>
+<fieldset>
+  <button id='delete-all' onclick="deleteAll()" > Закрыть все приложения</button>
+</fieldset>
+<script>
+  function deleteAll() {
+        fetch('/apps/all', {
+          method: 'DELETE',
+          })
+        }
+</script>
+</html>

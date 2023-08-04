@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Запущенные приложения</title>
+</head>
+
+<body>
+
+<h1>Запущенные приложения</h1>
+
+{% for app in apps %}
+<div class="app">
+  <p>{{app.name}}</p>
+</div>
+{% endfor %}
+
+</body>
+</html>

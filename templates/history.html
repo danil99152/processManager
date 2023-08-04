@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Удаленные приложения</title>
+</head>
+
+<body>
+
+<h1>Удаленные приложения</h1>
+
+{% for app in history %}
+<div class="history">
+  <p>{{app.name}}</p>
+</div>
+{% endfor %}
+
+
+</body>
+</html>
