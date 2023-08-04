@@ -1,6 +1,15 @@
 from sqlalchemy import create_engine, Column, Integer, String, DateTime, MetaData, Table
+from dotenv import load_dotenv
+from pathlib import Path
+from settings import settings
+import os
 
-engine = create_engine("postgresql://postgres:root@localhost/mt5db")
+parent_dir = os.path.dirname(settings.APP_PATH)
+dotenv_path = Path(parent_dir + '/.env')
+load_dotenv(dotenv_path=dotenv_path)
+
+SQLALCHEMY_DATABASE_URL = os.getenv('SQLALCHEMY_DATABASE_URL')
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 metadata_obj = MetaData()
 
